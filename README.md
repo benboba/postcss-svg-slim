@@ -23,7 +23,7 @@
 安装本插件
 
 ```
-npm install postcss-svg-slimming
+npm install postcss-svg-slimming -D
 ```
 
 在 postcss.config.js 中配置如下内容：
@@ -46,12 +46,13 @@ module.exports = {
 输出结果是否采用 base64 编码
 
 * 不配置（默认） —— 根据输入决定
-* true —— 强制输出的结果为 base64 编码
-* false —— 即使输入为 base64 编码，也会输出 utf8
+* true —— 强制输出的结果为 base64
+* false —— 即使输入为 base64，也会输出 utf8
 
 ### encode
 
 输出结果是否进行 url encode
+
 **注意：当 base64 为 true 时，此选项将没有任何影响**
 
 * 不配置（默认） —— 根据输入决定
@@ -60,4 +61,4 @@ module.exports = {
 
 ### rules
 
-请查看 [svg-slimming 的优化配置](https://github.com/benboba/svg-slimming)
+[请查看 svg-slimming 的优化配置](https://github.com/benboba/svg-slimming)
