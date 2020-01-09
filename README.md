@@ -1,64 +1,64 @@
 # PostCSS Svg Slimming
 
-一款 [PostCSS](https://github.com/postcss/postcss) 插件，使用 [svg-slimming](https://github.com/benboba/svg-slimming) 对 CSS 中的内联 svg 内容进行优化
+A [PostCSS](https://github.com/postcss/postcss) plugin that uses [svg-slimming](https://github.com/benboba/svg-slimming) to perform inline svg content in CSS optimization
 
-优化效果示意：
+The optimization effect indicates:
 
 ```css
-/* 优化前 */
+/* Before optimization */
 .foo {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><rect width="100px" height="100px" fill="#ff0000"></rect></svg>');
+		background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><rect width="100px" height="100px" fill="#ff0000"></rect></svg>');
 }
 ```
 
 ```css
-/* 优化后 */
+/* After optimization */
 .foo {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="red" d="M0,0H100V100H0z"/></svg>');
+	background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="red" d="M0,0H100V100H0z"/></svg>');
 }
 ```
 
-## 使用
+## use
 
-安装本插件
+Install this plugin
 
 ```
 npm install postcss-svg-slimming -D
 ```
 
-在 postcss.config.js 中配置如下内容：
+Configure the following in postcss.config.js:
 
 ```diff
 module.exports = {
-  plugins: [
-+   require('postcss-svg-slimming'),
-    ...
-  ]
+	plugins: [
++		require('postcss-svg-slimming'),
+		...
+	]
 }
 ```
 
-## 参数
+## parameter
 
-本插件支持一个 object 类型的参数，包含三个有效的属性：base64、encode 和 rules
+This plugin supports a parameter of type object, which contains three valid attributes: base64, encode, and rules
 
 ### base64
 
-输出结果是否采用 base64 编码
+Whether the output is base64 encoded
 
-* 不配置（默认） —— 根据输入决定
-* true —— 强制输出的结果为 base64
-* false —— 即使输入为 base64，也会输出 utf8
+* Not configured (default)-determined by input
+* true-force the output to be base64
+* false-even if the input is base64, it will output utf8
 
 ### encode
 
-输出结果是否进行 url encode
+Whether the output is url encode
 
-**注意：当 base64 为 true 时，此选项将没有任何影响**
+**Note: When base64 is true, this option will have no effect**
 
-* 不配置（默认） —— 根据输入决定
-* true —— 输出结果强制进行 url encode
-* false —— 输出结果一定不会 url encode（考虑兼容性原因，会对 # 进行转义）
+* Not configured (default)-determined by input
+* true-the output is forced to url encode
+* false-the output will not be url encode (for compatibility reasons, # will be escaped)
 
 ### rules
 
-[请查看 svg-slimming 的优化配置](https://github.com/benboba/svg-slimming)
+[Please see the optimized configuration of svg-slimming](https://github.com/benboba/svg-slimming)
