@@ -1,6 +1,6 @@
 {
   "name": "postcss-svg-slimming",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "PostCSS plugin svg optimizer",
   "keywords": [
     "postcss",
@@ -17,7 +17,7 @@
   "repository": "benboba/postcss-svg-slimming",
   "dependencies": {
     "postcss": "^7.0.18",
-    "svg-slimming": "^1.5.2"
+    "svg-slimming": "^1.5.3"
   },
   "bugs": {
     "url": "https://github.com/benboba/postcss-svg-slimming/issues"
