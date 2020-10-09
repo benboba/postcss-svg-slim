@@ -1,6 +1,6 @@
-# PostCSS Svg Slimming
+# PostCSS Svg Slim
 
-A [PostCSS](https://github.com/postcss/postcss) plugin that uses [svg-slimming](https://github.com/benboba/svg-slimming) to perform inline svg content in CSS optimization
+A [PostCSS](https://github.com/postcss/postcss) plugin that uses [svg-slim](https://github.com/benboba/svg-slim) to perform inline svg content in CSS optimization
 
 The optimization effect indicates:
 
@@ -23,7 +23,7 @@ The optimization effect indicates:
 Install this plugin
 
 ```
-npm install postcss-svg-slimming -D
+npm install postcss-svg-slim -D
 ```
 
 Configure the following in postcss.config.js:
@@ -31,7 +31,7 @@ Configure the following in postcss.config.js:
 ```diff
 module.exports = {
 	plugins: [
-+		require('postcss-svg-slimming'),
++		require('postcss-svg-slim'),
 		...
 	]
 }
@@ -61,4 +61,4 @@ Whether the output is url encode
 
 ### rules
 
-[Please see the optimized configuration of svg-slimming](https://github.com/benboba/svg-slimming)
+[Please see the optimized configuration of svg-slim](https://github.com/benboba/svg-slim)

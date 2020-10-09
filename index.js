@@ -1,8 +1,8 @@
 const postcss = require('postcss');
 const valueParser = require('postcss-value-parser');
-const svgSlimming = require('svg-slimming');
+const svgSlim = require('svg-slim');
 
-const PLUGIN = 'postcss-svg-slimming';
+const PLUGIN = 'postcss-svg-slim';
 
 function encode(data) {
 	return data.replace(/"/g, "'").replace(/%/g, '%25').replace(/</g, '%3C').replace(/>/g, '%3E').replace(/&/g, '%26').replace(/#/g, '%23').replace(/\s+/g, ' ');
@@ -47,7 +47,7 @@ function createPromise(decl, opts, result) {
 		const outputBase64 = typeof opts.base64 === 'boolean' ? opts.base64 : inputBase64;
 		const outputEncode = typeof opts.encode === 'boolean' ? opts.encode : inputEncode;
 
-		promises.push(svgSlimming(svg, opts.rules).then(res => {
+		promises.push(svgSlim(svg, opts.rules).then(res => {
 			let optimizedValue;
 			if (outputBase64) {
 				const data = Buffer.from(res).toString('base64');

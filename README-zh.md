@@ -1,6 +1,6 @@
-# PostCSS Svg Slimming
+# PostCSS Svg Slim
 
-一款 [PostCSS](https://github.com/postcss/postcss) 插件，使用 [svg-slimming](https://github.com/benboba/svg-slimming) 对 CSS 中的内联 svg 内容进行优化
+一款 [PostCSS](https://github.com/postcss/postcss) 插件，使用 [svg-slim](https://github.com/benboba/svg-slim) 对 CSS 中的内联 svg 内容进行优化
 
 优化效果示意：
 
@@ -14,7 +14,7 @@
 ```css
 /* 优化后 */
 .foo {
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="red" d="M0,0H100V100H0z"/></svg>');
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="red" d="M0,0H1e2V1e2H0z"/></svg>');
 }
 ```
 
@@ -23,7 +23,7 @@
 安装本插件
 
 ```
-npm install postcss-svg-slimming -D
+npm install postcss-svg-slim -D
 ```
 
 在 postcss.config.js 中配置如下内容：
@@ -31,7 +31,7 @@ npm install postcss-svg-slimming -D
 ```diff
 module.exports = {
   plugins: [
-+   require('postcss-svg-slimming'),
++   require('postcss-svg-slim'),
     ...
   ]
 }
@@ -61,4 +61,4 @@ module.exports = {
 
 ### rules
 
-[请查看 svg-slimming 的优化配置](https://github.com/benboba/svg-slimming)
+[请查看 svg-slim 的优化配置](https://github.com/benboba/svg-slim)
