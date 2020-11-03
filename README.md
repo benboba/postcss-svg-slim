@@ -1,5 +1,7 @@
 # PostCSS Svg Slim
 
+[中文版](README-cn.md)
+
 A [PostCSS](https://github.com/postcss/postcss) plugin that uses [svg-slim](https://github.com/benboba/svg-slim) to perform inline svg content in CSS optimization
 
 The optimization effect indicates:
