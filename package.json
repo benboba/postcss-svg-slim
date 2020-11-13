@@ -1,6 +1,6 @@
 {
   "name": "postcss-svg-slim",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "PostCSS plugin svg optimizer",
   "keywords": [
     "postcss",
@@ -16,8 +16,8 @@
   "license": "MIT",
   "repository": "benboba/postcss-svg-slim",
   "dependencies": {
-    "postcss": "^7.0.18",
-    "svg-slim": "^2.0.1"
+    "postcss": "^8.1.7",
+    "svg-slim": "^2.0.2"
   },
   "bugs": {
     "url": "https://github.com/benboba/postcss-svg-slim/issues"
