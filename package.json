@@ -16,8 +16,8 @@
   "license": "MIT",
   "repository": "benboba/postcss-svg-slim",
   "dependencies": {
-    "postcss": "^8.1.7",
-    "svg-slim": "^2.0.2"
+    "postcss": "^8.2.12",
+    "svg-slim": "^2.0.3"
   },
   "bugs": {
     "url": "https://github.com/benboba/postcss-svg-slim/issues"
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/benboba/postcss-svg-slim#readme",
   "devDependencies": {
     "@logux/eslint-config": "^33.0.0",
-    "eslint": "^6.5.1",
+    "eslint": "^7.24.0",
     "eslint-config-postcss": "^3.0.7",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-es5": "^1.4.1",

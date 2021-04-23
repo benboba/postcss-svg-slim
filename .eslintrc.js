@@ -5,7 +5,7 @@ module.exports = {
 			'impliedStrict': true,
 			'jsx': true,
 		},
-		'ecmaVersion': 2019
+		'ecmaVersion': 2019,
 	},
 	'root': true,
 	'env': {
@@ -22,7 +22,7 @@ module.exports = {
 
 		// getter 必须有返回值
 		'getter-return': [2, {
-			'allowImplicit': true // 允许返回 undefined
+			'allowImplicit': true, // 允许返回 undefined
 		}],
 
 		// 禁止给 Promise 构造函数传入一个 async 函数
@@ -43,7 +43,7 @@ module.exports = {
 
 		// 禁止使用常量作为判断条件
 		'no-constant-condition': [2, {
-			'checkLoops': false // 允许在 for, while, do...while 中使用常量判断（为了实现一些算法，需要人为创造死循环）
+			'checkLoops': false, // 允许在 for, while, do...while 中使用常量判断（为了实现一些算法，需要人为创造死循环）
 		}],
 
 		// 禁止在正则中匹配控制字符 \x （考虑特殊场景确有需求，只抛出 warning）
@@ -64,7 +64,7 @@ module.exports = {
 		// 禁止出现空代码块
 		// 允许空的 catch
 		'no-empty': [2, {
-			'allowEmptyCatch': true
+			'allowEmptyCatch': true,
 		}],
 
 		// 正则表达式中禁止出现空的字符集 [] （如果想匹配中括号请转义）
@@ -159,7 +159,7 @@ module.exports = {
 
 		// 禁止一个函数的复杂度超过 30
 		'complexity': [2, {
-			max: 30
+			max: 30,
 		}],
 
 		// 函数的所有条件分支必须都显式地返回值或都隐式地返回 undefined
@@ -183,7 +183,7 @@ module.exports = {
 
 		// 禁止使用 == 和 != 做条件判断
 		'eqeqeq': [2, 'always', {
-			'null': 'ignore' // 和 null 对比时除外
+			'null': 'ignore', // 和 null 对比时除外
 		}],
 
 		// for in 时需检测 hasOwnProperty
@@ -242,7 +242,7 @@ module.exports = {
 
 		// 禁止使用隐式类型转换
 		'no-implicit-coercion': [2, {
-			'allow': ['+', '!!'] // 允许 + 转数值 '' + 转字符串和 !! 转布尔值
+			'allow': ['+', '!!'], // 允许 + 转数值 '' + 转字符串和 !! 转布尔值
 		}],
 
 		// 禁止隐式的声明全局变量
@@ -576,7 +576,7 @@ module.exports = {
 
 		// 缩进规则
 		'indent': [2, 'tab', {
-			'SwitchCase': 1
+			'SwitchCase': 1,
 		}],
 
 		// JSX 语法必须使用双引号 （内容有双引号的除外）
@@ -603,7 +603,7 @@ module.exports = {
 		// 类成员之间必须加空白行
 		// 单行成员之后可以不加
 		'lines-between-class-members': [2, 'always', {
-			'exceptAfterSingleLine': true
+			'exceptAfterSingleLine': true,
 		}],
 
 		// 最大块嵌套深度为 5 层
@@ -690,9 +690,9 @@ module.exports = {
 
 		// 禁止使用混合的逻辑判断，必须把不同的逻辑用小括号括起来
 		'no-mixed-operators': [2, {
-			"groups": [
-				["&&", "||"]
-			]
+			'groups': [
+				['&&', '||'],
+			],
 		}],
 
 		// 禁止混合空格和 tab 缩进
@@ -766,7 +766,7 @@ module.exports = {
 		// 对象和数组成员的书写规则
 		// 允许所有成员写在一行，否则必须分行书写
 		'object-property-newline': [2, {
-			'allowAllPropertiesOnSameLine': true
+			'allowAllPropertiesOnSameLine': true,
 		}],
 
 		// var, let, const 的合并规则
@@ -929,7 +929,7 @@ module.exports = {
 		// 在适用箭头函数回调的场景，推荐使用箭头函数作为回调
 		'prefer-arrow-callback': [2, {
 			'allowNamedFunctions': true, // 允许具名的函数表达式作为回调函数
-			'allowUnboundThis': true // 当回调中包含 this 时，不强制转为箭头函数
+			'allowUnboundThis': true, // 当回调中包含 this 时，不强制转为箭头函数
 		}],
 
 		// 对于只在初始化时赋值的变量，推荐使用 const
@@ -969,5 +969,5 @@ module.exports = {
 
 		// yield* 的星号之前禁止加空格，之后必须加空格
 		'yield-star-spacing': 2,
-	}
+	},
 };
