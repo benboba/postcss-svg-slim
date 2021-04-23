@@ -1,6 +1,6 @@
 {
   "name": "postcss-svg-slim",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "PostCSS plugin svg optimizer",
   "keywords": [
     "postcss",
