@@ -1,6 +1,6 @@
 {
   "name": "postcss-svg-slim",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "PostCSS plugin svg optimizer",
   "keywords": [
     "postcss",
@@ -16,7 +16,6 @@
   "license": "MIT",
   "repository": "benboba/postcss-svg-slim",
   "dependencies": {
-    "postcss": "^8.2.12",
     "svg-slim": "^2.0.3"
   },
   "bugs": {
@@ -25,8 +24,8 @@
   "homepage": "https://github.com/benboba/postcss-svg-slim#readme",
   "devDependencies": {
     "@logux/eslint-config": "^33.0.0",
-    "eslint": "^7.24.0",
-    "eslint-config-postcss": "^3.0.7",
+    "eslint": "^7.28.0",
+    "eslint-config-postcss": "^4.0.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-es5": "^1.4.1",
     "eslint-plugin-import": "^2.18.2",
@@ -38,7 +37,8 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^12.1.0",
     "jest": "^24.9.0",
-    "postcss-value-parser": "^4.0.2"
+    "postcss": "^8.3.4",
+    "postcss-value-parser": "^4.1.0"
   },
   "eslintConfig": {
     "extends": "eslint-config-postcss"

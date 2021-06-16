@@ -37,7 +37,7 @@ it('multiple images', async() => {
 	await run(`a{background-image: url(data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect width='100px' height='100px' fill="%23ff0000"></rect></svg>), url(data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect width='100px' height='100px' fill="#fFFf00"></rect></svg>), url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxyZWN0IHdpZHRoPScxMDBweCcgaGVpZ2h0PScxMDBweCcgZmlsbD0iI2ZGRmYwMCI+PC9yZWN0Pjwvc3ZnPg==);}`, `a{background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='red' d='m0,0h1e2v1e2H0z'/%3E%3C/svg%3E"), url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="%23ff0" d="m0,0h1e2v1e2H0z"/></svg>'), url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiNmZjAiIGQ9Im0wLDBoMWUydjFlMkgweiIvPjwvc3ZnPg==);}`);
 });
 
-it('exec fail', async() => {
+it('parse fail', async() => {
 	await run(`a{background-image: url(data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><rect width='100px' height='100px' fill="#fFFf00"></svg>);}`, 'error');
 });
 

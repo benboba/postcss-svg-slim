@@ -1,4 +1,3 @@
-const postcss = require('postcss');
 const valueParser = require('postcss-value-parser');
 const svgSlim = require('svg-slim');
 
@@ -8,7 +7,7 @@ function encode(data) {
 	return data.replace(/"/g, "'").replace(/%/g, '%25').replace(/</g, '%3C').replace(/>/g, '%3E').replace(/&/g, '%26').replace(/#/g, '%23').replace(/\s+/g, ' ');
 }
 
-function exec(value) {
+function parse(value) {
 	let inputBase64 = false;
 	let inputEncode = false;
 	let svg = value.slice(value.indexOf(',') + 1);
@@ -41,7 +40,7 @@ function createPromise(decl, opts, result) {
 		}
 
 		const value = node.nodes[0].value;
-		const { svg, inputBase64, inputEncode } = exec(value, opts);
+		const { svg, inputBase64, inputEncode } = parse(value, opts);
 
 		let quote = node.nodes[0].quote;
 		const outputBase64 = typeof opts.base64 === 'boolean' ? opts.base64 : inputBase64;
@@ -94,14 +93,19 @@ function createPromise(decl, opts, result) {
 	});
 }
 
-module.exports = postcss.plugin(PLUGIN, (opts = {}) => (root, result) => {
-	const promises = [];
+module.exports = (opts = {}) => ({
+	postcssPlugin: PLUGIN,
+	Once(root, { result }) {
+		const promises = [];
 
-	root.walkDecls(decl => {
-		if (/data:image\/svg\+xml[^,]*,/.test(decl.value)) {
-			promises.push(createPromise(decl, opts, result));
-		}
-	});
+		root.walkDecls(decl => {
+			if (/data:image\/svg\+xml[^,]*,/.test(decl.value)) {
+				promises.push(createPromise(decl, opts, result));
+			}
+		});
 
-	return Promise.all(promises);
+		return Promise.all(promises);
+	},
 });
+
+module.exports.postcss = true;
